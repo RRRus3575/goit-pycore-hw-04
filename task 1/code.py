@@ -1,5 +1,7 @@
 import re
 
+path = r'task 1/text.txt'
+
 def total_salary(path):
     try:
         with open(path, 'r+') as file:            
@@ -16,13 +18,13 @@ def total_salary(path):
             
             for num in numbers:
                 sum_salary = sum_salary + int(num)
-
             average_salary = sum_salary // line_count
             result = (sum_salary, average_salary)
 
             return result
         
-        
     except Exception as e:
         print("error", e)
 
+
+print(total_salary(path))
