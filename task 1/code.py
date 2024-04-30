@@ -7,11 +7,14 @@ def total_salary(path):
         with open(path, 'r+') as file:            
             file_content = file.read()            
             file.seek(0)
-            numbers = re.findall(r'\d+', file_content)  
+            numbers = []
+
             line_count = 0 
-            for line in file:            
+            for line in file:  
+                result = line.split(',') 
+                numbers.append(result[1])        
                 line_count += 1 
-      
+            
             sum_salary = 0
             for num in numbers:
                 sum_salary = sum_salary + int(num)
